@@ -48,10 +48,6 @@ public class DBHandler extends SQLiteOpenHelper{
 
         Log.d("CREATED", "Created the Table"+Constants.Table_Name);
 
-       /* Cursor c= db.rawQuery("SELECT * FROM "+ Constants.Table_Name +" WHERE 0",null);
-        String[] columnNames=c.getColumnNames();
-
-        Log.d("Coloum names","COLOUM NAMES"+columnNames.toString());*/
     }
 
     @Override
