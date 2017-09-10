@@ -60,6 +60,10 @@ public class ListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        android.support.v7.app.ActionBar menu = getSupportActionBar();
+        menu.setLogo(R.drawable.ic_launcher);
+        menu.setDisplayUseLogoEnabled(true);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

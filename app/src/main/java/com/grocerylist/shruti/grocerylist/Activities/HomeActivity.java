@@ -50,8 +50,9 @@ public class HomeActivity extends AppCompatActivity {
         db= new DBHandler(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
+        android.support.v7.app.ActionBar menu = getSupportActionBar();
+        menu.setLogo(R.drawable.ic_launcher);
+        menu.setDisplayUseLogoEnabled(true);
         if(db.getCount()>0){
 
             startActivity(new Intent(HomeActivity.this,ListActivity.class ));
