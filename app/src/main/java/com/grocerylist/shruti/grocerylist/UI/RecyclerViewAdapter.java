@@ -189,7 +189,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
            final TextView title= (TextView) view.findViewById(R.id.title);
            Button saveButton=(Button)view.findViewById(R.id.add_button);
 
-            title.setText("Edit Grocery Item");
+            title.setText("Edit List Item");
 
             alertDialogBuilder.setView(view);
             alertDialog= alertDialogBuilder.create();
