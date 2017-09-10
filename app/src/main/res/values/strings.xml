@@ -7,7 +7,7 @@
     <string name="item_quantity">Enter Quantity</string>
     <string name="save_item">Save</string>
     <string name="title_activity_list">ListActivity</string>
-    <string name="alert_title">Are You Sure?</string>
+    <string name="alert_title">Are You Sure to Delete?</string>
     <string name="negative_option">No</string>
     <string name="positive_option">Yes</string>
 </resources>
