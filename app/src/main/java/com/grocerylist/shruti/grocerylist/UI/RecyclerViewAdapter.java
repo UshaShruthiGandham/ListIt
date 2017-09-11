@@ -1,5 +1,6 @@
 package com.grocerylist.shruti.grocerylist.UI;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
@@ -175,7 +176,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     if(mGroceryList.size()==0){
 
                         context.startActivity(new Intent(context,HomeActivity.class ));
-
+                        ((Activity) context).finish();
                     }
                     alertDialog.dismiss();
 
@@ -211,7 +212,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     String newQuantity= itemQuantity.getText().toString();
 
                     grocery.setName(newItem);
-                    grocery.setQuantity(newQuantity);
+                    grocery.setQuantity("Qty:"+newQuantity);
 
                     db= new DBHandler(context);
                     if(!itemName.getText().toString().isEmpty() && !itemQuantity.getText().toString().isEmpty()) {

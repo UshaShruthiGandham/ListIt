@@ -40,6 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
+        android:paddingTop="8dp"
         android:text="@string/add_item"
         android:textSize="18dp"
         android:textStyle="bold"
