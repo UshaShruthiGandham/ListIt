@@ -172,7 +172,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     mGroceryList.remove(getAdapterPosition());
                     notifyItemRemoved(getAdapterPosition());
 
+                    if(mGroceryList.size()==0){
+
+                        context.startActivity(new Intent(context,HomeActivity.class ));
+
+                    }
                     alertDialog.dismiss();
+
                 }
             });
 

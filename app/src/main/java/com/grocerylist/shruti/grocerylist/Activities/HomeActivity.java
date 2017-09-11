@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+
 import android.support.v7.widget.Toolbar;
 
 import com.grocerylist.shruti.grocerylist.Data.DBHandler;
@@ -19,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.support.v7.widget.ShareActionProvider;
 
 import com.grocerylist.shruti.grocerylist.R;
 
@@ -37,7 +40,11 @@ public class HomeActivity extends AppCompatActivity {
 
     private Button saveButton;
 
+    private Button shareButton;
+
     private DBHandler db;
+
+    private ShareActionProvider mShareActionProvider;
 
 
     @Override
@@ -75,29 +82,11 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_home, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     private void createPopupDialog() {
 
         dialogueBuilder = new AlertDialog.Builder(this);
         View view=getLayoutInflater().inflate(R.layout.popup,null);
+
         itemName= (EditText) view.findViewById(R.id.item_name);
         itemQuantity= (EditText)view.findViewById(R.id.item_quantity);
         saveButton=(Button)view.findViewById(R.id.add_button);
@@ -113,7 +102,7 @@ public class HomeActivity extends AppCompatActivity {
                 //TODO: Go to next Screen
                 if(!itemName.getText().toString().isEmpty() && !itemQuantity.getText().toString().isEmpty()) {
                     saveGroceryToDB(view);
-                    //mAlertDialog.dismiss();
+
                 }
             }
         });
