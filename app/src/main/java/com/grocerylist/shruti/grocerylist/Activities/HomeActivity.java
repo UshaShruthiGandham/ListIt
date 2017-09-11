@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
@@ -55,9 +56,11 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         db= new DBHandler(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        android.support.v7.app.ActionBar menu = getSupportActionBar();
+
+        ActionBar menu = getSupportActionBar();
         menu.setLogo(R.drawable.ic_launcher);
         menu.setDisplayUseLogoEnabled(true);
         if(db.getCount()>0){
